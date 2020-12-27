@@ -18,6 +18,8 @@ p.display.set_caption('Chess')
 icon = p.image.load('images/ChessIcon.png')
 p.display.set_icon(icon)
 
+wtf = p.image.load('images/wQ.png')
+
 # Load images
 def loadImages():
     pieces = ['wp', 'wR', 'wN', 'wB', 'wQ', 'wK', 'bp', 'bR', 'bN', 'bB', 'bQ', 'bK','wp2','bp2']
@@ -169,7 +171,6 @@ def main():
             musicOn = False
         if len(gs.moveLog) != 0:
             check = ((move.pieceMoved == 'wp' and move.endRow == 0) or (move.pieceMoved == 'bp' and move.endRow == 7))
-            check2 = ((move.pieceMoved == 'wp' and move.endRow == 1) or (move.pieceMoved == 'bp' and move.endRow == 6))
             if not check:
                 choose = False
             elif (gs.moveLog[-1].isPawnPromotion and not choose) and check:
